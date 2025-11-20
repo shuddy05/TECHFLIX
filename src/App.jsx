@@ -1,33 +1,19 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-
 const Home = lazy(() => import("./pages/Home/Home"));
-
 const Movies = lazy(() => import("./pages/Movies"));
-
 const TvSeries = lazy(() => import("./pages/TvSeries"));
-
 const SignIn = lazy(() => import("./pages/Signin"));
-
 const SignUp = lazy(() => import("./pages/SignUp"));
-
 const Bookmark = lazy(() => import("./pages/Bookmark"));
-
 const Error = lazy(() => import("./pages/Error"));
-
 const RootLayout = lazy(() => import("./layout/RootLayout"));
-
 const AuthLayout = lazy(() => import("./layout/AuthLayout"));
-
 import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "./context/AuthContext";
 import Loading from "./utils/Loading";
 import PrivateRoute from "./utils/PrivateRoute";
-
-const prefetch = (importFn) => {
-  importFn();
-};
 
 function App() {
   return (
@@ -60,5 +46,3 @@ function App() {
 }
 
 export default App;
-
-// https://techflix-backend.onrender.com
