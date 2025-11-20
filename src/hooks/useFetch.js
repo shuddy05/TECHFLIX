@@ -18,7 +18,6 @@ export const useFetch = (url, token) => {
         config.headers = { Authorization: `Bearer ${token}` };
       }
       const response = await axiosInstance.get(url, config);
-      // backend shape may vary: prefer response.data || response.data.data
       setData(response.data?.data ?? response.data);
     } catch (err) {
       handleError(err);
@@ -40,7 +39,6 @@ export const useFetch = (url, token) => {
     setError(err.response?.data?.message ?? "Something went wrong");
   };
 
-  // Optimistic UI helpers
   const toggleAddBookmark = (movieId, userId) => {
     if (!Array.isArray(data)) return;
     const updated = data.map((movie) =>
@@ -79,7 +77,6 @@ export const useFetch = (url, token) => {
       });
     } catch (err) {
       toast.error("Failed to bookmark", { id: "aass" });
-      // optionally refetch to reconcile state
       fetchData();
     }
   };

@@ -1,4 +1,3 @@
-// utils/axiosConfig.js
 import axios from "axios";
 
 const axiosInstance = axios.create({
@@ -6,10 +5,9 @@ const axiosInstance = axios.create({
   timeout: 20000,
 });
 
-// Request interceptor - add Authorization from localStorage on every request
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token"); // plain string
+    const token = localStorage.getItem("token"); 
     if (token) {
       config.headers = config.headers || {};
       config.headers.Authorization = `Bearer ${token}`;
@@ -19,7 +17,6 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Response interceptor - consistent error logging
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {

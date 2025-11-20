@@ -5,7 +5,6 @@ import Recommended from "./Recommended";
 import SearchResult from "./SearchResult";
 import Trending from "./Trending";
 
-// Home.jsx
 const Home = () => {
   const { data, error, loading, updateUI } = useFetch("/api/movie");
   const { searchInput, filteredMovies } = useCustomParams(data);

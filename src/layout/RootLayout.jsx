@@ -5,10 +5,8 @@ import useAuth from "../hooks/useAuth";
 import { useEffect } from "react";
 
 const RootLayout = () => {
-  // destructure "handleGetUser" function from the useAuth hook.
   const { handleGetUser } = useAuth();
 
-  // Calls "handleGetUser" when the component mounts to fetch user data
   useEffect(() => {
     handleGetUser();
   }, [handleGetUser]);

@@ -7,7 +7,6 @@ import { GoDotFill } from "react-icons/go";
 
 const MovieCarousel = ({ data, updateUI }) => {
   const { user, token } = useAuth();
-  // const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <div className="relative overflow-x-auto w-full">
@@ -31,51 +30,8 @@ const MovieCarousel = ({ data, updateUI }) => {
             />
           );
           return (
-            // <div key={_id} className="relative mt-6">
-            //   <div className="sm:w-[470px] sm:h-[230px] overflow-hidden relative w-[240px] group h-[140px]">
-            //     <img
-            //       src={image}
-            //       className="w-full h-full object-cover rounded-lg filter brightness-[70%]"
-            //       alt="Movie"
-            //     />
-            //     <div className="absolute top-1 right-3 md:top-3.5 md:right-6 text-white cursor-pointer w-[50px] h-[50px] rounded-full hover:bg-[#10141E50] flex items-center justify-center z-30 text-[25px]">
-            //       {bookmarkIcon}
-            //     </div>
-
-            //     <button
-            //       type="button"
-            //       className={
-            //         "absolute top-11 left-17 md:top-22 py-1.5 ps-1.5 pe-4 md:left-45 flex items-center justify-center rounded-full " +
-            //         "bg-[#FFFFFF25] backdrop-blur-sm gap-3 " +
-            //         "opacity-0 pointer-events-none transition-opacity duration-200 " +
-            //         "group-hover:opacity-100 group-hover:pointer-events-auto " +
-            //         "focus:opacity-100 focus:pointer-events-auto z-20 cursor-pointer"
-            //       }
-            //     >
-            //       <IoMdPlayCircle className="text-white text-[40px]" />
-            //       <p className="text-[16px] text-white">Play</p>
-            //     </button>
-            //   </div>
-
-            //   <div className="absolute bottom-5 left-6 flex flex-col justify-start items-start">
-            //     <div className="flex justify-start items-center gap-2 text-white text-sm font-normal md:gap-1 md:text-xs">
-            //       <p className="m-0">{year}</p>
-            //       <p className="mb-0.5">.</p>
-            //       <span className="flex justify-start items-center gap-1 md:gap-0.5">
-            //         {type === "movie" ? <RiFilmFill /> : <PiTelevisionFill />}
-            //         <p className="m-0">
-            //           {type === "movie" ? "Movie" : "TV Series"}
-            //         </p>
-            //       </span>
-            //       <p className="mb-0.5">.</p>
-            //       <p className="m-0">{rated}</p>
-            //     </div>
-            //     <p className="m-0 text-white text-xl font-normal md:text-sm">
-            //       {title}
-            //     </p>
-            //   </div>
-            // </div>
-            <div key={_id} className="relative mt-6">
+         
+            <div key={_id} className=" text-white relative mt-6">
               <div className="w-[240px] h-[140px] overflow-hidden relative sm:w-[470px] sm:h-[230px]">
                 <img
                   src={image}

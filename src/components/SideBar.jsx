@@ -7,7 +7,6 @@ import { Link, useLocation } from "react-router-dom";
 import { MdMovie } from "react-icons/md";
 import { useEffect, useState } from "react";
 import DropDown from "./Dropdown";
-// import "./SideBar.css";
 
 const SideBar = () => {
   const [selected, setSelected] = useState("/");

@@ -1,6 +1,5 @@
 import Loading from "../../utils/Loading";
 import MovieCarousel from "./MovieCarousel";
-// Trending.jsx
 
 const Trending = ({ data, error, loading, updateUI }) => {
   if (loading) {
