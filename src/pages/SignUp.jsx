@@ -125,7 +125,7 @@ const SignUp = () => {
           </p>
           <Link
             to="/signin"
-            className="text-[15px] font-light text-[#fc4747] no-underline"
+            className="text-[15px] font-light cursor-pointer text-[#fc4747] no-underline"
           >
             Login
           </Link>
