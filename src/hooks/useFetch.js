@@ -27,8 +27,12 @@ export const useFetch = (url, token) => {
   }, [url, token]);
 
   const handleError = (err) => {
-    if (err.message === "Network Error") {
-      setError("Server is down, please refresh");
+    if (err.code === "ECONNABORTED" || err.message?.includes("timeout")) {
+      setError("Server took too long to respond. The backend may be waking up, please refresh in a moment.");
+      return;
+    }
+    if (err.code === "ERR_NETWORK" || err.message === "Network Error") {
+      setError("Cannot connect to server. Please check if the backend server is running.");
       return;
     }
     if (err.response?.status === 401) {
@@ -36,7 +40,7 @@ export const useFetch = (url, token) => {
       navigate("/signin");
       return;
     }
-    setError(err.response?.data?.message ?? "Something went wrong");
+    setError(err.response?.data?.message ?? err.message ?? "Something went wrong");
   };
 
   const toggleAddBookmark = (movieId, userId) => {

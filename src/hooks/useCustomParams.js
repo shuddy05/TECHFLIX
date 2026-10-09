@@ -9,14 +9,15 @@ export const useCustomParams = (data) => {
   const searchInput = searchParams.get("search") ?? "";
 
   useEffect(() => {
-    if (data) {
+    if (Array.isArray(data)) {
       const searchedMovies = data.filter((movie) => {
-        return movie.title.toLowerCase().includes(searchInput.toLowerCase());
+        return (
+          movie?.title?.toLowerCase().includes(searchInput.toLowerCase()) ?? false
+        );
       });
 
       setFilteredMovies(searchedMovies);
     }
-
   }, [searchParams, data, searchInput]);
 
   return { searchInput, filteredMovies };

@@ -113,7 +113,7 @@ const SignUp = () => {
             type="submit"
             disabled={authenticating}
             className="w-full bg-[#fc4747] border-0 text-[#ffffff] text-[15px] font-normal py-[14.5px] rounded-[6px]
-                       hover:bg-[#ffffff] hover:text-[#10141e] disabled:opacity-60"
+                       hover:bg-[#ffffff] cursor-pointer hover:text-[#10141e] disabled:opacity-60"
           >
             {btnText}
           </button>
